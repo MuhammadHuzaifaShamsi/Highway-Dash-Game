@@ -1,0 +1,24 @@
+# Compiler
+CXX = g++
+
+# Paths to SFML
+SFML_ROOT = C:/SFML
+INCLUDE = -I$(SFML_ROOT)/include
+LIB = -L$(SFML_ROOT)/lib
+
+# SFML libraries
+LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+
+# Project files
+SRC = main.cpp
+TARGET = main
+
+# Build target
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(INCLUDE) $(SRC) -o $(TARGET) $(LIB) $(LIBS)
+
+# Clean build
+clean:
+	del $(TARGET).exe
